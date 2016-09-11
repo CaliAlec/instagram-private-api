@@ -4,6 +4,7 @@ var _ = require("underscore");
 var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
+var Helpers = require('../../helpers');
 
 
 function Media(session, params) {
@@ -132,6 +133,31 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
     return new Request(session)
         .setMethod('POST')
         .setResource('mediaConfigure')
+        .setData(payload)
+        .generateUUID()
+        .signPayload()
+        .send()
+        .then(function(json) {
+            return new Media(session, json.media)
+        })
+}
+
+Media.configureReel = function (session, uploadId, caption) {
+    if(_.isEmpty(uploadId))
+        throw new Error("Upload argument must be upload valid upload id");
+    if(!caption) caption = "";
+    var payload = pruned({
+        camera_position: "back",
+        waterfall_id: Helpers.generateUUID(),
+        edits: {
+        },
+        source_type: "1",
+        upload_id: uploadId,
+        caption: caption
+    })
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('mediaConfigureReel')
         .setData(payload)
         .generateUUID()
         .signPayload()
