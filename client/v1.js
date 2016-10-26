@@ -25,6 +25,7 @@ InstagramV1.ThreadItem = require('./v1/thread-item');
 InstagramV1.QE = require('./v1/qe');
 InstagramV1.Upload = require('./v1/upload');
 InstagramV1.discover = require('./v1/discover');
+InstagramV1.ExploreStoryTray = require('./v1/explore-story-tray');
 
 var creator = require('./v1/account-creator');
 InstagramV1.AccountCreator = creator.AccountCreator;
