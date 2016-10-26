@@ -22,10 +22,6 @@ UserStory.prototype.get = function () {
   .signPayload()
   .send()
   .then(function(data) {
-    console.log(JSON.stringify(data, null, 2))
-    var media = _.map(data.items, function(medium){
-      return new Media(that.session, medium);
-    });
-    return media;    
+    return data.reels_media;
   });
 };
