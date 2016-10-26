@@ -5,7 +5,7 @@ function ExploreStoryTray(session) {
 }
 
 module.exports = ExploreStoryTray;
-var Request = require('../request');
+var Request = require('./request');
 
 ExploreStoryTray.prototype.get = function () {
   var that = this;
