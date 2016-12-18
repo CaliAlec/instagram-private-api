@@ -14,6 +14,6 @@ ExploreStoryTray.prototype.get = function () {
   .setResource('exploreStoryTray')
   .send()
   .then(function(data) {
-    return data.items[0].stories.tray;
+    return data.items[0].stories;
   });
 };
