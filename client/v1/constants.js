@@ -47,6 +47,7 @@ const ROUTES = {
     qeSync: 'qe/sync/',
     discoverAyml: 'discover/ayml/',
     exploreStoryTray: 'discover/explore/',
+    topLiveVideos: 'discover/top_live/',
     inbox: 'direct_v2/inbox/<%= cursor ? ("?cursor=" + cursor) : "" %>',
     threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
     threadsShow: 'direct_v2/threads/<%= threadId %>/<%= cursor ? ("?cursor=" + cursor) : "" %>',
@@ -75,9 +76,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '2f6dcdf76deb0d3fd008886d032162a79b88052b5f50538c1ee93c4fe7d02e60',
+    SIG_KEY: 'f6bcd0639ea3d279c10d4ffe49bd59f1f5045cf73c62fc33c9e45766f6cf6c63',
     SIG_VERSION: '4',
-    APP_VERSION: '9.7.0'
+    APP_VERSION: '10.1.0'
 }
 
 
